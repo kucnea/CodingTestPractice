@@ -63,7 +63,7 @@ public class leftPlusRight {
 			}
 		}
 		
-		// 좀 복잡해도 O(n)으로 해결!
+		// 좀 복잡해도 O(n) 수준으로 해결!
 		
 		return answer;
 	}
