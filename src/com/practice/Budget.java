@@ -1,7 +1,5 @@
 package com.practice;
 
-import java.util.ArrayList;
-
 public class Budget {
 
 	public static void main(String[] args) {
