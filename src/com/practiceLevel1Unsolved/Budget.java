@@ -7,6 +7,7 @@ public class Budget {
 
 	public static void main(String[] args) {
 		
+//		https://programmers.co.kr/learn/courses/30/lessons/12982
 		/*
 		 
 		S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 
