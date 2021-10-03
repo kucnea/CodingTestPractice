@@ -1,4 +1,7 @@
-package com.practice;
+package com.practiceLevel1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Budget {
 
@@ -34,6 +37,8 @@ public class Budget {
 		
 	}
 
+	
+	
 	private static int solution(int[] d, int budget) {
 		
 		int result = 0;
@@ -41,6 +46,65 @@ public class Budget {
 		return result;
 	}
 	
+	
+	
+	
+	
+	
+	/*
+
+	private static int solution(int[] d, int budget) {
+		
+		int result = 0;
+		int budgetC = budget;
+		int pro = 0;
+		int cnt = (int) (d.length*Math.random());
+		ArrayList<Integer> cnts = new ArrayList<Integer>();
+		int a = 0;
+//		ArrayList<Integer> as = new ArrayList<Integer>();
+		HashSet<Integer> as = new HashSet<Integer>();
+		
+//		while(true) {
+//			
+//			if(budget-d[cnt]>0) {
+//				cnts.add(cnt);
+//				pro = budget-d[cnt];
+//				a++;
+//			}else {
+//				cnts = new ArrayList<Integer>();
+//				budget=budgetC;
+//				as.add(a);
+//			}
+//			
+//			cnt = (int) (d.length*Math.random());
+//			
+//			for (int i = 0; i < cnts.size(); i++) {
+//				if(cnts.get(i)==cnt) {
+//					cnt = (int) (d.length*Math.random());
+//					i=-1;
+//				}
+//			} 
+//			
+//			
+//		}
+		
+		
+//		for (int i = 0; i < d.length; i++) {
+//			
+//			if(budget-d[i]>0) {
+//				pro = budget-d[i];
+//				cnt.set(cntC, cnt.get(i)+1);
+//			}else {
+//				budget = budgetCopy;
+//				cntC++;
+//			}
+//			
+//		}
+		
+		
+		return result;
+	}
+	*/
 
 	
 	/*

@@ -1,4 +1,4 @@
-package com.practice;
+package com.practiceLevel1;
 
 public class PlusExcludeNum {
 
