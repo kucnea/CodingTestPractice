@@ -31,14 +31,24 @@ public class TresureMap {
 		
 		String[] answer = {};
 		
-		String a = Integer.toBinaryString(arr1[0]);
-		System.out.println(a);
-		System.out.println(String.format("0%-5s", a));
+//		String a = Integer.toBinaryString(arr1[0]);
+//		System.out.println(a);
+//		System.out.println(String.format("0%-5s", a));
+		
+		String[] a1 = new String[arr1.length];
+		String[] a2 = new String[arr2.length];
+		
 		
 		for (int i = 0; i < arr1.length; i++) {
-			
+			a1[i] = String.format("0%-5s", Integer.toBinaryString(arr1[i]));
+			a2[i] = String.format("0%-5s", Integer.toBinaryString(arr2[i]));
 		}
-				
+		
+		for (int i = 0; i < a2.length; i++) {
+			System.out.println(a1[i]);
+		}
+		
+		
 		return answer;
 	}
 
