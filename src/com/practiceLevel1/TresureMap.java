@@ -29,7 +29,7 @@ public class TresureMap {
 
 	private static String[] solution(int n, int[] arr1, int[] arr2) {
 		
-		String[] answer = {};
+		String[] answer = new String[arr1.length];
 		
 //		String a = Integer.toBinaryString(arr1[0]);
 //		System.out.println(a);
@@ -40,12 +40,33 @@ public class TresureMap {
 		
 		
 		for (int i = 0; i < arr1.length; i++) {
-			a1[i] = String.format("0%-5s", Integer.toBinaryString(arr1[i]));
-			a2[i] = String.format("0%-5s", Integer.toBinaryString(arr2[i]));
+			if(Integer.toBinaryString(arr1[i]).length()<5) a1[i] = "0"+Integer.toBinaryString(arr1[i]);
+			else a1[i] = Integer.toBinaryString(arr1[i]);
+			if(Integer.toBinaryString(arr2[i]).length()<5) a2[i] = "0"+Integer.toBinaryString(arr2[i]);
+			else a2[i] = Integer.toBinaryString(arr2[i]);
 		}
 		
+//		for (int i = 0; i < a2.length; i++) {
+//			System.out.println(a1[i]);
+//			System.out.println(a1[i].length());
+//			System.out.println(a1[i].substring(0,1));
+//			System.out.println(a1[i].substring(4,5));
+//		}
+
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1.length; j++) {
+				if(a1[i].substring(j,j+1).equals("1") || a2[i].subSequence(j,j+1).equals("1")) {
+					answer[i] += "#";
+				}else {
+					answer[i] += " ";
+				}
+			}
+			
+		}
+		
+		
 		for (int i = 0; i < a2.length; i++) {
-			System.out.println(a1[i]);
+			System.out.println(answer[i]);
 		}
 		
 		
