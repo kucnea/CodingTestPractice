@@ -17,12 +17,19 @@ public class BigOTest4 {
 	}
 
 	private static int solution(int n) {
-		int result = 0;
-		for (int i = 0; i < n; i++) {
-			if(Math.pow(2, i)<=n) {
-				result = (int) Math.pow(2, i);
-			}
-		}
+		int result = 1;
+//		for (int i = 0; i < n; i++) {
+//			if(Math.pow(2, i)<=n) {
+//				result = (int) Math.pow(2, i);
+//			}else break;
+//		}
+		
+//		for (int i = 0; i < n; i++) {
+//			if(result*2<=n) result *= 2;
+//			else break;
+//		}
+		
+		while(result*2<=n) result *=2;
 		
 		return result;
 	}
