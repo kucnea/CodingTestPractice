@@ -19,10 +19,18 @@ public class BigOTest3 {
 
 	private static int solution(int n) {
 		
-		for (int i = 0; i <= n/2; i++) {
-			if(i*i==n) {
-				return 1;
-			}
+//		for (int i = 0; i <= n/2; i++) {
+//			if(i*i==n) {
+//				return 1;
+//			}
+//		}
+//		이건 내가 한 방식인데, 4의 제곱근이 절반인 2이고,
+//		그 이후부터는 각 수의 제곱근이 절반보다 작은 것을 이용해 연산횟수를 줄이려 했으나,
+//		더 효율적인 방법이 있었다.
+		
+		for (int i = 0; i < n; i++) {
+			if(i*i>n) return 0;
+			if(i*i==n) return 1;
 		}
 		
 		return 0;
