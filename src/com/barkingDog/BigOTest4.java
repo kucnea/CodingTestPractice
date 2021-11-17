@@ -17,6 +17,7 @@ public class BigOTest4 {
 	}
 
 	private static int solution(int n) {
+		
 		int result = 1;
 //		for (int i = 0; i < n; i++) {
 //			if(Math.pow(2, i)<=n) {
