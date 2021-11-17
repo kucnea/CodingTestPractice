@@ -44,6 +44,10 @@ public class KakaoGames {
 		for (int i = 0; i < d.length(); i++) {
 			String time = d.substring(i,i+1);
 			if(time.matches("[+-]?\\d*(\\.\\d+)?")) {
+				if(i!=0) {
+					count.put(c,point);
+					c++;	
+				}
 				point = Integer.parseInt(time); 
 			}else if(time.equals("S")) {
 				
@@ -56,9 +60,12 @@ public class KakaoGames {
 			}else if(time.equals("#")) {
 				point = point*(-1);
 			}
+			System.out.println("time : "+time);
+			System.out.println("point : "+point);
+			System.out.println("answer : "+answer);
+			System.out.println("count : "+count);
 			answer += point;
-			count.put(c,point);
-			c++;
+			
 			
 		}
 		
