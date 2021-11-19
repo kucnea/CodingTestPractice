@@ -88,6 +88,8 @@ public class DataStructureMap {
 		link.put(1, 5);
 		System.out.println(link);
 		
+		
+		
 	}
 
 }
