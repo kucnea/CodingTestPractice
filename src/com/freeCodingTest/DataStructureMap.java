@@ -2,6 +2,7 @@ package com.freeCodingTest;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DataStructureMap {
@@ -73,11 +74,19 @@ public class DataStructureMap {
 		hash.put(null, 1);
 		System.out.println(hash);
 //		ht.put(100, null);
-		ht.put(null, 1);
+//		ht.put(null, 1);
 		System.out.println("ht : "+ht);
 		
 		
+		hash.clear();
+		hash.put(10, 4);
+		hash.put(1, 5);
+		System.out.println(hash);
 		
+		LinkedHashMap<Integer, Integer> link = new LinkedHashMap<>();
+		link.put(10, 4);
+		link.put(1, 5);
+		System.out.println(link);
 		
 	}
 
