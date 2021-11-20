@@ -4,21 +4,27 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Scanner;
 import java.util.Stack;
 
-public class BalancedWorld {
-//public class Main {
+public class BOJ4949 {
 
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-			String q = br.readLine();
+		
+		String q = "";
+		
+		while((q = br.readLine()) != null) {
+			
 			String answer = solution(q);
-			bw.write(answer+"\n");
-			bw.flush();
-			bw.close();
+			System.out.println(answer);
+			
+		}
+		
+
+		
 		
 	}
 
@@ -63,7 +69,9 @@ public class BalancedWorld {
 					break;
 				}
 			}
-			
+			System.out.println("q.charAt(i) : "+q.charAt(i));
+			System.out.println("stack : "+stack);
+			System.out.println();
 		}
 		
 		if(result) return "yes";

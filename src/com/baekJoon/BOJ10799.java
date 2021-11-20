@@ -15,7 +15,10 @@ public class BOJ10799 {
 		
 		String q = br.readLine();
 		int answer = solution(q);
-		System.out.println("answer : "+answer);
+//		System.out.println("answer : "+answer);
+		bw.write(answer);
+		bw.flush();
+		bw.close();
 	}
 
 	private static int solution(String q) {
