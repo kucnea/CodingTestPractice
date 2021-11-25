@@ -1,14 +1,14 @@
 package com.freeCodingTest;
 
-public class LinkedList {
+public class LinkedListTest {
 	
 	private ListNode head;
 	
-	public LinkedList() {
+	public LinkedListTest() {
 		head = null;
 	}
 	
-	//Áß°£¿¡ »ðÀÔ
+	//ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void insertNode(ListNode preNode, String data) {
 		
 		ListNode  newNode = new ListNode(data);
@@ -17,7 +17,7 @@ public class LinkedList {
 		preNode.link = newNode;
 	}
 	
-	//¸¶Áö¸·¿¡ »ðÀÔ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void insertNode(String data) {
 		
 		ListNode newNode = new ListNode(data);
@@ -34,7 +34,7 @@ public class LinkedList {
 		}
 	}
 	
-	//Áß°£ ³ëµå »èÁ¦
+	//ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void deleteNode(String data) {
 		
 		ListNode preNode = head;
@@ -62,7 +62,7 @@ public class LinkedList {
 		}
 	}
 	
-	//¸¶Áö¸· ³ëµå »èÁ¦
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void deleteNode() {
 		ListNode preNode;
 		ListNode tempNode;
@@ -87,7 +87,7 @@ public class LinkedList {
 		}
 	}
 	
-	// Å½»ö
+	// Å½ï¿½ï¿½
 	public ListNode searchNode(String data) {
 		
 		ListNode tempNode = this.head;
@@ -136,7 +136,7 @@ public class LinkedList {
 	
 	
 	public static void main(String[] args) {
-		LinkedList linkList = new LinkedList();
+		LinkedListTest linkList = new LinkedListTest();
 		
 		
 	}
