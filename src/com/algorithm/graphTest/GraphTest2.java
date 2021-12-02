@@ -1,4 +1,4 @@
-package com.algorithm.GraphTest;
+package com.algorithm.graphTest;
 
 import java.util.ArrayList;
 

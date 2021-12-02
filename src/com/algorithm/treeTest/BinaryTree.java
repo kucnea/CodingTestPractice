@@ -1,4 +1,4 @@
-package com.algorithm.TreeTest;
+package com.algorithm.treeTest;
 
 public class BinaryTree {
 	
