@@ -1,4 +1,4 @@
-package com.algorithm.comparatorNComparable;
+package com.javaStudy.comparableNComparatorTest;
 
 import java.util.Comparator;
 

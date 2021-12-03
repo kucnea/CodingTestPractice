@@ -1,4 +1,4 @@
-package com.algorithm.comparatorNComparable;
+package com.javaStudy.comparableNComparatorTest;
 
 public class Exam {
 	

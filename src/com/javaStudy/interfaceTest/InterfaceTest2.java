@@ -1,4 +1,4 @@
-package com.test;
+package com.javaStudy.interfaceTest;
 
 public class InterfaceTest2 implements InterfaceTest{
 
