@@ -51,5 +51,17 @@ public class HeapTest<E> {
 		return getLeftChild(index) + 1;      // 물론, index*2 + 1 을 해도 된다.
 	}
 	
-	
+	private void resize(int newCapacity) {
+		
+		Object[] newArray = new Object[newCapacity];
+		
+		// 기존 배열에 있던 내용은 새 배열에 넣어준다.
+		for (int i = 0; i < size; i++) {
+			newArray[i] = array[i];
+		}
+		
+		// 기존 배열 GC처리를 위해 null처리 후 새 배열을 연결.
+		this.array = null;
+		this.array = newArray;
+	}
 }
