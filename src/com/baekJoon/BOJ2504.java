@@ -152,18 +152,14 @@ public class BOJ2504 {
 				stage.push(p.pop());
 				point = 0;
 			}
-//			System.out.println("s : "+s);
-//			System.out.println("p : "+p);
-//			System.out.println("count : "+count);
-//			System.out.println("stage : "+stage);
-//			System.out.println("point : "+point);
-//			System.out.println("====");
+			System.out.println("s : "+s);
+			System.out.println("p : "+p);
+			System.out.println("count : "+count);
+			System.out.println("stage : "+stage);
+			System.out.println("point : "+point);
+			System.out.println("====");
 		}
 		
-//		while(true) {
-//			if(!p.isEmpty()) point += p.pop();
-//			else break;
-//		}
 		while(true) {
 			if(!stage.isEmpty()) point += stage.pop();
 			else break;
