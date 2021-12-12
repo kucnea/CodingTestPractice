@@ -1,6 +1,7 @@
 package com.algorithm.heapTest;
 
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 public class HeapTest<E> {
 	
@@ -146,8 +147,109 @@ public class HeapTest<E> {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
+	public E remove() {
+		if(array[1] == null) {
+			throw new NoSuchElementException();
+		}
+		
+		E result = (E) array[1];
+		E target = (E) array[size];
+		array[size] = null;
+		
+		siftDown(1, target);
+		
+		return result;
+	}
 	
 	
+	// 하향 선별
+	// @param idx 삭제할 노드의 인덱스
+	// @param target 재배치 할 노드
+	private void siftDown(int idx, E target) {
+		// comparator가 존재할 경우 comparator를 인자로 넘겨준다
+		if(comparator != null) {
+			siftDownComparator(idx, target, comparator);
+		}else {
+			siftDownComparable(idx, target);
+		}
+	}
+	
+	// comparator를 이용한 sift-down
+	@SuppressWarnings("unchecked")
+	private void siftDownComparator(int idx, E target, Comparator<? super E> comp) {
+		
+		array[idx] = null;
+		size--;
+		
+		int parent = idx;
+		int child;
+		
+		while((child = getLeftChild(parent)) <= size){
+			
+			int right = getRightChild(parent);
+			
+			Object childVal = array[child];
+			
+			if(right <= size && comp.compare((E) childVal, (E) array[right]) > 0){
+				child = right;
+				childVal = array[child];
+			}
+			
+			if(comp.compare(target, (E) childVal) <= 0) {
+				break;
+			}
+			
+			array[parent] = childVal;
+			parent = child;
+		}
+		
+		array[parent] = target;
+		
+		if(array.length > DefaultCapacity && size < array.length / 4) {
+			resize(Math.max(DefaultCapacity, array.length /2));
+		}
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void siftDownComparable(int idx, E target) {
+		
+		Comparable<? super E> comp = (Comparable<? super E>) target;
+		
+		array[idx] = null;
+		size--;
+		
+		int parent = idx;
+		int child;
+		
+		while((child = getLeftChild(parent)) <= size) {
+			
+			int right = getRightChild(parent);
+			
+			Object childVal = array[child];
+			
+			if(right <= size && ((Comparable<? super E>)childVal).compareTo((E)array[right])> 0){
+				child = right;
+				childVal = array[child];
+			}
+			
+			if(comp.compareTo((E) childVal) <= 0){
+				break;
+			}
+			
+			array[parent] = childVal;
+			parent = child;
+			
+		}
+		
+		array[parent] = comp;
+		
+		if(array.length > DefaultCapacity && size < array.length / 4) {
+			resize(Math.max(DefaultCapacity, array.length /2 ));
+		}
+		
+	}
 	
 	
 	
