@@ -4,8 +4,8 @@ public class GCF {
 
 	public static void main(String[] args) {
 		
-		int a = 36;
-		int b = 18;
+		int a = 192;
+		int b = 162;
 		
 		int gcf = Gcf(a,b);
 		
