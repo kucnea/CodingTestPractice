@@ -10,7 +10,6 @@ public class Q2 {
 	static int n,m;
 	static int[][] list = new int[1001][1001];
 	static int x=1,y = 1;
-	static int result = 0;
 	static int f = 0;
 	
 	public static void main(String[] args) throws Exception {
@@ -36,7 +35,8 @@ public class Q2 {
 			}
 			System.out.println();
 		}
-		solution(x,y);
+		int result = 0;
+		solution(x,y,result);
 		
 		bw.write("result : "+f);
 		bw.flush();
@@ -45,7 +45,7 @@ public class Q2 {
 		
 	}
 
-	private static void solution(int x, int y) {
+	private static void solution(int x, int y, int result) {
 		
 		if(x<1 || y<1 || x>n || y>m) return;
 		if(x==n && y==m) {
@@ -64,10 +64,10 @@ public class Q2 {
 			list[x][y]=0;
 			result++;
 			
-			solution(x+1,y);
-			solution(x,y+1);
-			solution(x-1,y);
-			solution(x,y-1);
+			solution(x+1,y,result);
+			solution(x,y+1,result);
+			solution(x-1,y,result);
+			solution(x,y-1,result);
 			
 		}
 		
