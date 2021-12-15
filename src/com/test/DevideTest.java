@@ -10,6 +10,11 @@ public class DevideTest {
 		
 		System.out.println("c : "+c);
 		
+		int d = 16;
+		int e = 4;
+		d /= e;
+		System.out.println("d : "+d);
+		
 		
 	}
 

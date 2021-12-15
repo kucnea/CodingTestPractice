@@ -19,7 +19,7 @@ public class Q1 {
 		
 		for (int i = 0; i < coin.length; i++) {
 			count += money/coin[i];
-			money = money%coin[i];
+			money %= coin[i];
 		}
 		
 		return count;
