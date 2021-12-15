@@ -18,9 +18,9 @@ public class Q3 {
 			
 			int temp = Integer.parseInt(s.substring(i, i+1));
 			
-			if(count==0) count+=temp;
+			if(count==0 || count==1) count+=temp;
 			else {
-				if(temp==0) count+=temp;
+				if(temp==0 || temp==1) count+=temp;
 				else count*=temp;	
 			}
 			
