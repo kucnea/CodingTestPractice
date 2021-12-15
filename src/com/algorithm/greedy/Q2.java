@@ -15,6 +15,13 @@ public class Q2 {
 
 	private static int solution(int n, int k) {
 		
+		if(k==1) {
+			if(n==1) return count;
+			n -= 1;
+			count++;
+			solution(n,k);
+		}
+		
 		if(n!=1) {
 			
 			if(n%k==0) {
