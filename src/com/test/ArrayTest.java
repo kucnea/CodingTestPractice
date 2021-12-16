@@ -24,9 +24,19 @@ public class ArrayTest {
 		System.out.println(d.size());
 		
 		int[] temp=null;
-		System.out.println(temp);
+		System.out.println("temp : "+temp);
 		temp = new int[1];
 		System.out.println(temp[0]);
+		System.out.println("temp : "+temp);
+		
+		
+		String[] s = {"1","2"};
+		System.out.println("s : "+s);
+		
+		char ca = 'a';
+		System.out.println(++ca);
+		System.out.println(ca++);
+		
 	}
 
 }
