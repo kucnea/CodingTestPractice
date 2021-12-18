@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class Q4 {
 
@@ -20,7 +21,7 @@ public class Q4 {
 		long time = (startTime-endTime)/1000;
 		
 		bw.write("result : "+result);
-		bw.write("\n time : "+time);
+		bw.write("\ntime : "+time);
 		bw.flush();
 		
 		br.close();
@@ -34,21 +35,29 @@ public class Q4 {
 		
 		String result = "";
 		int count = 0;
-		char[] arr = s.toCharArray();
 		
 		for(int i=0 ; i < s.length() ; i++) {
 			String temp = s.substring(i,i+1);
 			
 			if(temp.matches("[0-9]+")) {
 				count += Integer.parseInt(temp);
+			}else {
+				result +=temp;
 			}
 				
-			
 		}
 		
+		char[] arr = result.toCharArray();
+		Arrays.sort(arr);
+		result = "";
+		
+		for(int i = 0 ; i < arr.length ; i++) {
+			result += arr[i];
+		}
+		
+		result += count;
 		
 		return result;
 	}
 }
 
-`
