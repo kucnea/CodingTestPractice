@@ -37,6 +37,17 @@ public class ArrayTest {
 		System.out.println(++ca);
 		System.out.println(ca++);
 		
+		
+		int[] list = new int[10];
+		for(int i = 0 ; i<10 ; i++) {
+			System.out.print(list[i]+" ");
+			list[i]=0;
+		}
+		System.out.println();
+		for(int i = 0 ; i<10 ; i++) {
+			System.out.print(list[i]+" ");
+		}
+		
 	}
 
 }

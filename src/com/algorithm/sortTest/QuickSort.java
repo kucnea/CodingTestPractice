@@ -8,7 +8,7 @@ public class QuickSort {
 		
 		list = new int[10];
 		int[] array = {5,7,9,0,3,1,6,2,4,8};
-		list = array;
+		list = array.clone();
 		
 		long startTime = System.currentTimeMillis();
 
@@ -17,12 +17,16 @@ public class QuickSort {
 		int right = list.length-1;
 		
 		solution(pivot,left,right);
-		
+		quickSort(array,0,9);
 		long endTime = System.currentTimeMillis();
 		long time = (endTime-startTime)/1000;
 		
 		for(int i = 0; i < list.length ; i++) {
 			System.out.print(list[i]+" ");
+		}
+		System.out.println();
+		for(int i = 0; i < list.length ; i++) {
+			System.out.print(array[i]+" ");
 		}
 		System.out.println();
 		System.out.println("Time : "+time);
@@ -120,4 +124,62 @@ public class QuickSort {
 		
 		return;
 	}
+	
+	
+	private static void quickSort(int[] list, int start, int end) {
+		
+		if(start >= end) return;
+		int pivot = start;
+		int left = start+1;
+		int right = end;
+		
+		while(left<=right) {
+			
+			while(left <= end && list[left] <= list[pivot]) left++;
+			while(right > start && list[right] >= list[pivot]) right--;
+			
+			if(left > right) {
+				int temp = list[pivot];
+				list[pivot] = list[right];
+				list[right] = temp;
+			}else {
+				int temp = list[left];
+				list[left] = list[right];
+				list[right] = temp;
+			}
+			
+		}
+		
+		quickSort(list,start, right-1);
+		quickSort(list,right+1,end);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
