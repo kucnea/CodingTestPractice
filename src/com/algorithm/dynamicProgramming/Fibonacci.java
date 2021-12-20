@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 
 public class Fibonacci {
 
+	static int count;
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,20 +20,22 @@ public class Fibonacci {
 		long startTime = System.currentTimeMillis();
 		fibonacci = solution(fibonacci);
 		long endTime = System.currentTimeMillis();
-		long time = (endTime-startTime)/1000;
+		long time = (endTime-startTime);
 		
-		int x = 4;
+		int x = n;
+		count = 0;
 		startTime = System.currentTimeMillis();
-		bw.write(s(x)+" ");
+		bw.write("s(x) : "+s(x)+" ");
+		bw.write("\ncount : "+count+"\n");
 		endTime = System.currentTimeMillis();
-		time = (endTime-startTime)/1000;
+		long time2 = (endTime-startTime);
 		
-		System.out.println("-------");
 		
 		for(int i = 0 ; i < fibonacci.length ; i++) {
 			bw.write(fibonacci[i]+" ");
 		}
 		bw.write("\ntime : "+time);
+		bw.write("\ntime2 : "+time2);
 		bw.flush();
 		
 		br.close();
@@ -45,7 +48,7 @@ public class Fibonacci {
 		
 		f[0] = 1;
 		f[1] = 1;
-		
+
 		for(int i=2 ; i<f.length ; i++) {
 			f[i] = f[i-1]+f[i-2];
 		}
@@ -55,6 +58,8 @@ public class Fibonacci {
 	
 	
 	private static int s(int x) {
+		
+		count++;
 		
 		if(x==1 || x==2) {
 			return 1;
