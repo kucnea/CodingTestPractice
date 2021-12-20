@@ -151,6 +151,35 @@ public class Q1 {
 	}
 	
 	
+	private static int left2(int[] list, int x) {
+		
+		int start = 0;
+		int end = list.length;
+		
+		while(start<end) {
+			
+			int mid = (start+end)/2;
+			if(list[mid]>=x) end = mid;
+			else start = mid+1;
+		}
+		
+		return end;
+	}
+	
+	private static int right2(int[] list, int x) {
+		
+		int start = 0;
+		int end = list.length;
+		
+		while(start<end) {
+			
+			int mid = (start+end)/2;
+			if(list[mid]>x) end = mid;
+			else start = mid+1;
+		}
+		
+		return end;
+	}
 	
 	
 	
