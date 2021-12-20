@@ -15,10 +15,19 @@ public class Fibonacci {
 		String s = br.readLine();
 		int n = Integer.parseInt(s);
 		int[] fibonacci = new int[n];
+		
 		long startTime = System.currentTimeMillis();
 		fibonacci = solution(fibonacci);
 		long endTime = System.currentTimeMillis();
 		long time = (endTime-startTime)/1000;
+		
+		int x = 4;
+		startTime = System.currentTimeMillis();
+		bw.write(s(x)+" ");
+		endTime = System.currentTimeMillis();
+		time = (endTime-startTime)/1000;
+		
+		System.out.println("-------");
 		
 		for(int i = 0 ; i < fibonacci.length ; i++) {
 			bw.write(fibonacci[i]+" ");
@@ -43,4 +52,15 @@ public class Fibonacci {
 		
 		return f;
 	}
+	
+	
+	private static int s(int x) {
+		
+		if(x==1 || x==2) {
+			return 1;
+		}
+		
+		return s(x-1)+s(x-2);
+	}
+	
 }
