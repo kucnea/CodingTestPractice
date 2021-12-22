@@ -32,7 +32,7 @@ public class Q4 {
 			int x = 0;
 			int y = 0;
 			for(int j = 0 ; j < n*m ; j++) {
-				System.out.println("x : "+x+", y : "+y+", j : "+j);
+				
 				list[x][y] = Integer.parseInt(ss[j]);
 				
 				if(y==(m-1)) {
@@ -50,6 +50,7 @@ public class Q4 {
 		
 		for(int i = 0 ; i < t ; i++) {
 			bw.write("result["+i+"] : "+result[i]);
+			bw.write("\n");
 		}
 		bw.flush();
 		
@@ -59,26 +60,39 @@ public class Q4 {
 	}
 	
 	private static int solution(int t, int[][] list) {
-		int result = 0;
-		int j = 0;
-		int temp = 0;
 		
-		for(int i = 0 ; i < list.length ; i++) {
+		int j = 0;
+		
+		for(int i = 0 ; i < list[0].length ; i++) {
+			
+			int temp = 0;
+			int jtemp = j;
+			
 			if(i==0) {
 				
-				for(int m = 1 ; j<list[m].length ; m++) {
-					temp = Math.max(list[i][m], list[i][m-1]);
+				for(int m = 1 ; m<list.length ; m++) {
+					if(temp<list[m][i]) {
+						temp = list[m][i];
+						j = m;
+					}
 				}
+				System.out.println("list["+j+"]["+i+"] : "+list[j][i]+", temp : "+temp);
 				d[t][i] = temp;
-				
+				continue;
 			}
 			
-			
-			d[t][i] = d[t][i-1]+Math.max(list[i][j], Math.max(list[i][j-1], list[i][j+1]));
-			
+			for(int m = jtemp-1 ; m <= jtemp+1 ; m++) {
+				if(m<0 || m>=list.length) continue;
+				if(temp<list[m][i]) {
+					temp = list[m][i];
+					j = m;
+				}
+			}
+			d[t][i] = d[t][i-1]+temp;
+			System.out.println("list["+j+"]["+i+"] : "+list[j][i]+", temp : "+temp);
 		}
 		
-		return result;
+		return d[t][list[0].length-1];
 	}
 
 	
