@@ -29,8 +29,9 @@ public class Q3 {
 		long endTime = System.currentTimeMillis();
 		long time = (endTime - startTime)/1000;
 		
+		
 		bw.write("result : "+result);
-		bw.write("\n time : "+time);
+		bw.write("\ntime : "+time);
 		bw.flush();
 		
 		br.close();
@@ -71,24 +72,5 @@ public class Q3 {
 		if(start==end) return true;
 		return false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
