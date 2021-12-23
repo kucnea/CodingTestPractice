@@ -7,16 +7,22 @@ public class DijkstraTest {
 	
 	private static class Node{
 		
+		private int name;
 		private boolean flag;
 		private HashMap<Node,Integer> postNodes;
 		
-		public Node() {
-			this.flag = false;
+		public Node(int name) {
+			this.name = name;
+			this.flag = true;
 			this.postNodes = new HashMap<>();
 		}
 		
+		public int getIndex() {
+			return this.name;
+		}
+
 		public void touch() {
-			this.flag = true;
+			this.flag = false;
 		}
 		
 		public boolean getFlag() {
@@ -41,15 +47,17 @@ public class DijkstraTest {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Node n1 = new Node();
-		Node n2 = new Node();
-		Node n3 = new Node();
-		Node n4 = new Node();
-		Node n5 = new Node();
-		Node n6 = new Node();
+		Node n1 = new Node(0);
+		Node n2 = new Node(1);
+		Node n3 = new Node(2);
+		Node n4 = new Node(3);
+		Node n5 = new Node(4);
+		Node n6 = new Node(5);
 		
 		n1.addNode(n2, 2);
+		n1.addNode(n3, 5);
 		n1.addNode(n4, 1);
+		
 		
 		n2.addNode(n3, 3);
 		n2.addNode(n4, 2);
@@ -119,7 +127,9 @@ public class DijkstraTest {
 				iter.remove();
 			}
 			
-			i++;
+			graph[i].touch();
+			i = nearestNode(graph,i);
+			if(i==10001) break;
 			if(i==end) break;
 		}
 		
@@ -127,7 +137,33 @@ public class DijkstraTest {
 		return d.get(graph[end]);
 	}
 	
-	
+	private static int nearestNode(Node[] graph, int i) {
+		
+		HashMap<Node,Integer> temp = (HashMap<Node,Integer>) graph[i].postNodes.clone();
+		Iterator<Node> iter = temp.keySet().iterator();
+		
+		System.out.println("nearestNode start i : "+i);
+		int amount = 10001;
+		int index = 10001;
+		
+		while(iter.hasNext()) {
+			
+			Node node = iter.next();
+			System.out.println("node.getFlag : "+node.getFlag());
+			if(node.getFlag()) {
+				if(amount>graph[i].getDistance(node)) {
+					amount = graph[i].getDistance(node);
+					index = node.getIndex();
+					System.out.println("index : "+index);
+				}
+			}
+			iter.remove();
+			
+		}
+		System.out.println("nearestNode end index : "+index);
+		System.out.println();
+		return index;
+	}
 	
 	
 	
