@@ -1,6 +1,7 @@
 package com.algorithm.shortestWay;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class DijkstraTest {
 	
@@ -36,7 +37,7 @@ public class DijkstraTest {
 		
 	}
 	
-	static int[] d = new int[7];
+	static HashMap<Node,Integer> d = new HashMap<>();
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -72,6 +73,20 @@ public class DijkstraTest {
 		graph[4] = n5;
 		graph[5] = n6;
 		
+		int inf = 10000;
+		d.put(n1,0);
+		d.put(n2,inf);
+		d.put(n3,inf);
+		d.put(n4,inf);
+		d.put(n5,inf);
+		d.put(n6,inf);
+		
+		HashMap<Node,Integer> temp = (HashMap<Node,Integer>)n1.postNodes.clone();
+		Iterator<Node> iter = temp.keySet().iterator();
+		while(iter.hasNext()) {
+			System.out.println("temp.get(iter.next()) : "+temp.get(iter.next()));
+		}
+		
 		long startTime = System.currentTimeMillis();
 		int result = solution(graph,0,6);
 		long endTime = System.currentTimeMillis();
@@ -86,14 +101,30 @@ public class DijkstraTest {
 	
 	private static int solution(Node[] graph, int start, int end) {
 		
+		int i = start;
+		end--;
+		
 		while(true) {
-
-//			graph[start].postNodes.keySet()
-			break;
+			
+			HashMap<Node,Integer> temp = (HashMap<Node,Integer>)graph[i].postNodes.clone();
+			Iterator<Node> iter = temp.keySet().iterator();
+			
+			while(iter.hasNext()) {
+				Node node = iter.next();
+				int dis = d.get(node);
+				int predis = d.get(graph[i])+graph[i].postNodes.get(node);
+				
+				d.put(node, Math.min(predis, dis));
+				
+				iter.remove();
+			}
+			
+			i++;
+			if(i==end) break;
 		}
 		
 			
-		return d[6];
+		return d.get(graph[end]);
 	}
 	
 	
