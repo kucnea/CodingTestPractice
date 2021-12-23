@@ -13,6 +13,7 @@ public class AddArrayListTest {
 		b.add(1);
 		b.add(2);
 		b.add(3);
+		
 		c.add(4);
 		c.add(5);
 		c.add(6);
@@ -22,6 +23,16 @@ public class AddArrayListTest {
 //		a.get(0).add(c);
 		
 		System.out.println(b);
+		System.out.println("b  : "+b);
+		b.remove(1);
+		System.out.println("b  : "+b);
+		
+		ArrayList<String> d = new ArrayList<String>();
+		d.add("1");
+		d.add("2");
+		System.out.println("d : "+d);
+		d.remove("1");
+		System.out.println("d : "+d);
 		
 	}
 
