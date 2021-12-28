@@ -24,6 +24,12 @@ public class Q1 {
 		
 		int[][] map = new int[n+1][n+1];
 		
+		for(int i = 0 ; i < map.length ; i++) {
+			for(int j = 0 ; j < map.length ; j++) {
+				map[i][j] = inf;
+			}
+		}
+		
 		for(int i = 0 ; i < m ; i++) {
 			s = br.readLine();
 			ss = s.split(" ");
@@ -53,12 +59,21 @@ public class Q1 {
 	
 	
 	
-	private static String solution(int[] map, int c) {
+	private static String solution(int[][] map, int c) {
 		String result = "";
+		int place = 0;
+		int time = 0;
 		
+		for(int i = 1 ; i < map.length ; i++) {
+			for(int j = 1 ; j < map[0].length ; j++) {
+				if(map[i][j]<inf) {
+					place++;
+					if(time<map[c][j]) time = map[c][j];
+				}
+			}
+		}
 		
-		
-		
+		result = place+" "+time;
 		return result;
 	}
 
