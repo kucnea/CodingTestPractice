@@ -1,5 +1,6 @@
 package com.algorithm.extraAlgorithm;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PrimeNumberChecking {
@@ -13,10 +14,23 @@ public class PrimeNumberChecking {
 		long startTime = System.currentTimeMillis();
 		boolean result1 = prime1(n);
 		long endTime = System.currentTimeMillis();
-		long time1 = (endTime - startTime)/1000;
+		long time = (endTime - startTime)/1000;
 		
 		System.out.println("result1 : "+result1);
-		System.out.println("time1 : " +time1);
+		System.out.println("time1 : " +time);
+		
+		startTime = System.currentTimeMillis();
+		ArrayList<Integer> list1 = searchP(n);
+		endTime = System.currentTimeMillis();
+		time = (endTime - startTime)/1000;
+		
+		System.out.print("list1 : ");
+		for(int i = 0 ; i < list1.size() ; i++) {
+			System.out.print(list1.get(i) + " ");
+		}
+		System.out.println();
+		System.out.println("time1 : " +time);
+		
 	}
 
 	
@@ -28,5 +42,24 @@ public class PrimeNumberChecking {
 		}
 		
 		return flag;
+	}
+	
+	private static ArrayList<Integer> searchP(int n) {
+		
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		int[] list = new int[n+1];
+		list[0] = list[1] = 1;
+
+		for(int i = 2 ; i <= n ; i++) {
+			if(list[i]==0) {
+				for(int j = 2 ; i*j <=n ; j++) {
+					list[i*j] = 1;
+				}
+				result.add(i);
+			}
+		}
+		
+		
+		return result;
 	}
 }
