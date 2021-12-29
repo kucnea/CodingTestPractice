@@ -31,10 +31,16 @@ public class DisjointTest {
 		Node n5 = new Node(Integer.parseInt(ss[4]));
 		Node n6 = new Node(Integer.parseInt(ss[5]));
 		
-		union(n1,n4);
-		union(n2,n3);
-		union(n2,n4);
+//		union(n1,n4);
+//		union(n2,n3);
+//		union(n2,n4);
+//		union(n5,n6);
+		
 		union(n5,n6);
+		union(n4,n5);
+		union(n3,n4);
+		union(n2,n3);
+		union(n1,n2);
 		
 		System.out.println("n1.parent.num : "+n1.parent.num);
 		System.out.println("n2.parent.num : "+n2.parent.num);
@@ -42,6 +48,8 @@ public class DisjointTest {
 		System.out.println("n4.parent.num : "+n4.parent.num);
 		System.out.println("n5.parent.num : "+n5.parent.num);
 		System.out.println("n6.parent.num : "+n6.parent.num);
+		
+		System.out.println("n6.parent : "+findParent(n6).num);
 	}
 
 	
@@ -58,7 +66,10 @@ public class DisjointTest {
 	private static Node findParent(Node n) {
 		
 		if(n==n.parent) return n;
-		else return findParent(n.parent);
+		else n = findParent(n.parent);
+		
+		return n;
+		
 	}
 	
 	
