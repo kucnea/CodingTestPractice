@@ -54,4 +54,25 @@ public class DisjointTest {
 		}
 		
 	}
+	
+	private static Node findParent(Node n) {
+		
+		if(n==n.parent) return n;
+		else return findParent(n.parent);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
