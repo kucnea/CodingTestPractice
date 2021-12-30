@@ -50,15 +50,18 @@ public class PrimeNumberChecking {
 		int[] list = new int[n+1];
 		list[0] = list[1] = 1;
 
-		for(int i = 2 ; i <= n ; i++) {
+//		for(int i = 2 ; i <= n ; i++) {
+		for(int i = 2 ; i < Math.sqrt(n) ; i++) {
 			if(list[i]==0) {
 				for(int j = 2 ; i*j <=n ; j++) {
 					list[i*j] = 1;
 				}
-				result.add(i);
 			}
 		}
 		
+		for(int i = 2 ; i <=n ; i++) {
+			if(list[i]==0) result.add(i);
+		}
 		
 		return result;
 	}
