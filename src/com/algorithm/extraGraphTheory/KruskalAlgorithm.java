@@ -88,6 +88,10 @@ public class KruskalAlgorithm {
 		
 		Arrays.sort(e);
 		
+//		for(int i = 0 ; i < e.length ; i++) {
+//			System.out.println("e["+i+"].dis : "+e[i].dis);
+//		}
+		
 		long startTime = System.currentTimeMillis();
 		int result = kruskal();
 		long endTime = System.currentTimeMillis();
@@ -111,10 +115,15 @@ public class KruskalAlgorithm {
 		int result = 0;
 		
 		for(int i = 0 ; i < e.length ; i++) {
+			System.out.println("e["+i+"].start : "+e[i].start);
 			e[i].check = true;
-			if(!cTest()) {
+			System.out.println("cTest() : "+cTest());
+			if(cTest()) {
+				System.out.println("e[i].dis : "+e[i].dis);
 				result += e[i].dis;
 			}
+			System.out.println("result : "+result);
+			System.out.println();
 		}
 
 		return result;
@@ -132,7 +141,7 @@ public class KruskalAlgorithm {
 					e[i].check = false;
 					return true;
 				}
-				else if(graph[e[i].start-1].num<graph[e[i].end-1].num) graph[e[i].end-1].parent = graph[e[i].start-1].parent;
+				else union(graph[e[i].start-1],graph[e[i].end-1]);
 			}
 			
 		}
@@ -144,6 +153,15 @@ public class KruskalAlgorithm {
 		
 		if(n.equals(n.parent)) return n;
 		else return n.parent = getParent(n.parent);
+		
+	}
+	
+	private static void union(Node n1, Node n2) {
+		
+		n1 = getParent(n1);
+		n2 = getParent(n2);
+		if(n1.num<n2.num) n2.parent = n1;
+		else n1.parent = n2;
 		
 	}
 	

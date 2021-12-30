@@ -41,7 +41,9 @@ public class CycleCheck {
 	}
 	
 	private static void union(int i, int j) {
-		if(list[i]<list[j]) list[j] = list[i];
-		else list[i] = list[j];
+		i = find(i);
+		j = find(j);
+		if(i<j) list[j] = i;
+		else list[i] = j;
 	}
 }
