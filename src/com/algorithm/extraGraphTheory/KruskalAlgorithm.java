@@ -91,7 +91,7 @@ public class KruskalAlgorithm {
 //		for(int i = 0 ; i < e.length ; i++) {
 //			System.out.println("e["+i+"].dis : "+e[i].dis);
 //		}
-		
+
 		long startTime = System.currentTimeMillis();
 		int result = kruskal();
 		long endTime = System.currentTimeMillis();
@@ -115,10 +115,11 @@ public class KruskalAlgorithm {
 		int result = 0;
 		
 		for(int i = 0 ; i < e.length ; i++) {
-			System.out.println("e["+i+"].start : "+e[i].start);
+			System.out.println("e["+i+"].dis : "+e[i].dis);
 			e[i].check = true;
-			System.out.println("cTest() : "+cTest());
-			if(cTest()) {
+			boolean flag = cTest();
+			System.out.println("flag : "+flag);
+			if(!flag) {
 				System.out.println("e[i].dis : "+e[i].dis);
 				result += e[i].dis;
 			}
@@ -137,8 +138,10 @@ public class KruskalAlgorithm {
 		
 		for(int i = 0 ; i < e.length ; i++) {
 			if(e[i].check) {
+				e[i].check = false;
+				System.out.println("i : "+i);
 				if(getParent(graph[e[i].start-1]).equals(getParent(graph[e[i].end-1])))	{
-					e[i].check = false;
+					
 					return true;
 				}
 				else union(graph[e[i].start-1],graph[e[i].end-1]);
