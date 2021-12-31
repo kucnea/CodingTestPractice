@@ -28,6 +28,13 @@ public class StringTest {
 			System.out.println("arr[i] : "+arr[i]);
 		}
 				
+		
+		a = "";
+		System.out.println("a.length : "+a.length());
+		int i = 1;
+		a += (i+1);
+		System.out.println("a : "+a);
+			
 	}
 	
 }

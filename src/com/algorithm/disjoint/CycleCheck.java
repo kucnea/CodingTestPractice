@@ -1,4 +1,4 @@
-package com.algorithm.extraGraphTheory;
+package com.algorithm.disjoint;
 
 public class CycleCheck {
 

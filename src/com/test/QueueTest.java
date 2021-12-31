@@ -12,6 +12,13 @@ public class QueueTest {
 		System.out.println(q);
 		System.out.println(q.poll());
 		System.out.println(q);
+		
+		q.add(1);
+		q.add(1);
+		q.add(1);
+		System.out.println(q);
+		
+		
 	}
 	
 }
