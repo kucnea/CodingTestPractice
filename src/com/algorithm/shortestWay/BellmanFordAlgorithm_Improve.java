@@ -87,6 +87,10 @@ public class BellmanFordAlgorithm_Improve {
 					if(i==list.length) return null;
 					result[end] = result[start]+dis;
 				}
+				for(int k = 0 ; k < result.length ; k++) {
+					System.out.print(result[k]+" ");
+				}
+				System.out.println();
 			}
 		}
 		

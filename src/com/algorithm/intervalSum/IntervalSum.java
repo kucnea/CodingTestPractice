@@ -1,4 +1,4 @@
-package com.algorithm.extraAlgorithm;
+package com.algorithm.intervalSum;
 
 public class IntervalSum {
 
