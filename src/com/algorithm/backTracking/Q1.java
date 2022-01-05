@@ -27,6 +27,13 @@ public class Q1 {
 		for(int i = 0 ; i < result.length ; i++) {
 			System.out.println(result[i]);
 		}
+
+		System.out.println("====");
+		String[] result1 = solution(n,m);
+		
+		for(int i = 0 ; i < result.length ; i++) {
+			System.out.println(result1[i]);
+		}
 		
 	}
 
@@ -53,6 +60,57 @@ public class Q1 {
 		
 		return result;
 	}
+	
+	private static String[] bt(int n, int m) {
+		
+		int count = 1;
+		for(int i = 0 ; i < m ; i++) {
+			count*=(n-i);
+		}
+		String[] result = new String[count/2];		
+		String temp = "";
+		
+		
+		for(int i = 0 ; i < list.length ; i++) {
+			if(temp.length()<=m) {
+				if(!check[i]) {
+					check[i] = true;
+					temp += list[i];
+				}
+			}
+		}
+		
+		
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
