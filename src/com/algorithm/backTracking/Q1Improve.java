@@ -31,7 +31,7 @@ public class Q1Improve {
 	private static void bt(int k) {
 		
 		if(k==m) {
-			for(int i = 0 ; i <list.length ; i++) {
+			for(int i = 0 ; i < m ; i++) {
 				System.out.print(list[i]+" ");
 			}
 			System.out.println();
@@ -48,56 +48,5 @@ public class Q1Improve {
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
