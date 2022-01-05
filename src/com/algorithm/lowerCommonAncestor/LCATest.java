@@ -47,6 +47,7 @@ public class LCATest {
 		list = new int[n+1];
 		depth = new int[n+1];
 		q = new LinkedList<>();
+//		list[1] = 1;
 		list[0] = -1;
 		for(int i = 1 ; i < n ; i++) {
 			s = br.readLine();
@@ -55,43 +56,58 @@ public class LCATest {
 			int sec = Integer.parseInt(ss[1]);
 			int parent = Math.min(fir, sec);
 			int index = Math.max(fir, sec);
-			System.out.println("fir : "+fir+", sec : "+sec);
 			list[index] = parent;
 		}
-		
-		for(int i = 0 ; i < list.length ; i++) {
-			System.out.println("list["+i+"]  :"+list[i]);
-		}
-		dep(1);
-		for(int i = 1 ; i < depth.length ; i++) {
-			System.out.println("depth["+i+"] : "+depth[i]);
-		}
-		
-		
-//		s = br.readLine();
-//		ss = s.split(" ");
-//		int m = Integer.parseInt(ss[0]);
-//
-//		for(int i = 0 ; i < m ; i++) {
-//			s = br.readLine();
-//			ss = s.split(" ");
-//			int fir = Integer.parseInt(ss[0]);
-//			int sec = Integer.parseInt(ss[1]);
-//			
-//			int result = lca(fir, sec);
-//			System.out.println("result");
+
+//		for(int i = 0 ; i < list.length ; i++) {
+//			System.out.println("list["+i+"] : "+list[i]);
 //		}
+		dep(1);
+		
+		
+		s = br.readLine();
+		ss = s.split(" ");
+		int m = Integer.parseInt(ss[0]);
+
+		for(int i = 0 ; i < m ; i++) {
+			s = br.readLine();
+			ss = s.split(" ");
+			
+			int fir = Integer.parseInt(ss[0]);
+			int sec = Integer.parseInt(ss[1]);
+			int left = 0;
+			int right = 0;
+			if(depth[fir]>depth[sec]) {
+				left = sec;
+				right = fir;
+			}else {
+				left = fir;
+				right = sec;
+			}
+			
+			int result = lca(left, right);
+			System.out.println(result);
+			System.out.println();
+		}
 		
 		
 	}
 	
 	
-	private static int lca(int fir, int sec) {
-		int result = 0;
+	private static int lca(int left, int right) {
+
+		int temp = depth[right]-depth[left];
 		
+		for(int i = 0 ; i < temp ; i++) {
+			right = list[right];
+		}
+
+		while(true) {
+			if(list[right]==list[left]) return list[left];
+			right = list[right];
+			left = list[left];
+		}
 		
-		
-		return result;
 	}
 	
 	private static void dep(int index) {
