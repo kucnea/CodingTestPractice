@@ -34,7 +34,15 @@ public class StringTest {
 		int i = 1;
 		a += (i+1);
 		System.out.println("a : "+a);
-			
+		
+		System.out.println("=======");
+		a = "";
+		a = "1234";
+		System.out.println(a.substring(0,1));
+		System.out.println(a.substring(1,2));
+		System.out.println(a.substring(2,3));
+		System.out.println(a.substring(3,4));
+		System.out.println(a.substring(4,4));
 	}
 	
 }
