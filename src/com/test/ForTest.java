@@ -8,6 +8,12 @@ public class ForTest {
 			System.out.println("i : "+i);
 		}
 		
+		long startTime = System.currentTimeMillis();
+		for(int i = 0 ; i < 60 ; i++) {
+			System.out.println("i : "+i);
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println((endTime-startTime));
 	}
 
 }
