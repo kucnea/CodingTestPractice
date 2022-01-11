@@ -1,10 +1,11 @@
 package com.test;
 
 import java.util.Arrays;
+import java.io.*;
 
 public class StringTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		String a = "a";
 		String b = "b";
@@ -43,6 +44,17 @@ public class StringTest {
 		System.out.println(a.substring(2,3));
 		System.out.println(a.substring(3,4));
 		System.out.println(a.substring(4,4));
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String s = br.readLine();
+		bw.write("s : "+s+"\n");
+		bw.write("s.equals null : "+s.equals(null)+"\n");
+		bw.write("s.equals \"\" : "+s.equals(""));
+		bw.flush();
+		bw.close();
+		br.close();
 	}
 	
 }
