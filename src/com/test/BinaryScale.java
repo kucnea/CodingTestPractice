@@ -1,7 +1,11 @@
 package com.test;
 
 public class BinaryScale {
-
+	
+	public class Node{
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		int n = 1;
@@ -39,8 +43,6 @@ public class BinaryScale {
 		
 		int num = Integer.valueOf("8",8);
 		System.out.println(num);
-		
-		
 		
 		
 	}
