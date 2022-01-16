@@ -10,11 +10,10 @@ public class BinaryScale2 {
 		System.out.println(c);
 		
 		
-		
-		
-		
-		
-		
+		int d = Integer.valueOf("110",2);
+		System.out.println("d : "+d);
+		String e = Integer.toBinaryString(110);
+		System.out.println("e : "+e);
 	}
 
 }
