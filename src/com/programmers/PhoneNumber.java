@@ -20,15 +20,15 @@ public class PhoneNumber {
 	
 	private static boolean solution(String[] s) {
 
-		for (int i = 0; i < s.length; i++) {
-			for (int j = 0; j < s.length; j++) {
-				count++;
-				if(i==j) continue;
+		for (int i = 0; i < s.length-1; i++) {
+			for (int j = i+1; j < s.length; j++) {
 				if(s[j].startsWith(s[i])) return false;
+                if(s[i].startsWith(s[j])) return false;
 			}
 		}
 
 		return true;
+		
 	}
 	
     public static boolean solution2(String[] phone_book) {
