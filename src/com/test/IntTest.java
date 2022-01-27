@@ -13,6 +13,12 @@ public class IntTest {
 		System.out.println(a);
 		
 		System.out.println("b : "+b);
+		
+		a = 1;
+		long c = 1;
+		double d = 1.0;
+		System.out.println(a==c);
+		System.out.println(a==d);
 	}
 
 }
