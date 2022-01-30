@@ -19,6 +19,7 @@ public class IntTest {
 		double d = 1.0;
 		System.out.println(a==c);
 		System.out.println(a==d);
+		
 	}
 
 }
