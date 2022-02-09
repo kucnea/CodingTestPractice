@@ -18,6 +18,7 @@ public class BOJ1712 {
 		
 		String result = "";
 		
+		
 		if(c <= b) result = -1+"";
 		else {
 			
