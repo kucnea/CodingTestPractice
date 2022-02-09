@@ -17,8 +17,7 @@ public class BOJ1712 {
 		int c = Integer.parseInt(st.nextToken());
 		
 		String result = "";
-		
-		
+		/
 		if(c <= b) result = -1+"";
 		else {
 			
