@@ -34,7 +34,7 @@ public class BOJ2775 {
 //			}
 //			System.out.println();
 //		}
-//		
+		
 		for(int i = 0 ; i < t ; i++) {
 		
 			s = br.readLine();
