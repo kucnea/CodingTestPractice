@@ -10,6 +10,8 @@ public class Do {
 		a.setName("¾È³ç");
 		Man m = new Man();
 		a = (DtoA) m.gettingAge(a);
+
+		
 		
 		System.out.println("a.getName() : "+a.getName());
 		
