@@ -1,21 +1,37 @@
 package com.baekJoon;
 
 import java.io.*;
-import java.util.*;
 
-public class BOJ1002 {
-	
+public class BOJ11653 {
+
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		String s = br.readLine();
-		int t = Integer.parseInt(s);
-		for(int i = 0 ; i < t ; i++) {
+		int n = Integer.parseInt(s);
+		int temp = 2;
+		String result = "";
+		
+		while(temp<=n) {
+			
+			if(n%temp==0) {
+				n = n/temp;
+				result = temp+"";
+				bw.write(result+"\n");
+			}else {
+				temp++;
+			}
 			
 		}
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		bw.flush();
+		bw.close();
+		br.close();
+		
+		
 		
 	}
+	
 }
