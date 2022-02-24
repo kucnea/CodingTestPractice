@@ -20,6 +20,10 @@ public class IntTest {
 		System.out.println(a==c);
 		System.out.println(a==d);
 		
+		
+		System.out.println((6/3)+1);
+		
+		
 	}
 
 }
