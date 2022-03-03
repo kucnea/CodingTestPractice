@@ -12,38 +12,49 @@ public class BOJ7568 {
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int t = Integer.parseInt(st.nextToken());
-		HashMap<Integer,StringTokenizer> list = new HashMap<>();
+		HashMap<Integer,Node> list = new HashMap<>();
 		
 		for(int i = 0 ; i < t ; i++) {
 			
 			st = new StringTokenizer(br.readLine());
-			list.put(i, st);
+			list.put(i, new Node(st));
 			
 		}
 		
 		
 		for(int i = 0 ; i < t ; i++) {
 			int rank = 1;
-			int ix = Integer.parseInt(list.get(i).nextToken());
-			int iy = Integer.parseInt(list.get(i).nextToken());
+			
 			for(int j = 0 ; j < t ; j++) {
-				if(i==j) break;
-				if(ix<Integer.parseInt(list.get(j).nextToken()) && iy<Integer.parseInt(list.get(j).nextToken())) {
-					rank++;
-				}else if(ix<=Integer.parseInt(list.get(j).nextToken()) && iy<Integer.parseInt(list.get(j).nextToken())){
-					rank++;
-				}else if(ix<Integer.parseInt(list.get(j).nextToken()) && iy<=Integer.parseInt(list.get(j).nextToken())) {
-					rank++;
-				}
+				if(i==j) continue;
+				
+				if(list.get(i).x<list.get(j).x && list.get(i).y<list.get(j).y) rank++;
+//				else if(list.get(i).x==list.get(j).x && list.get(i).y<list.get(j).y) rank++;
+//				else if(list.get(i).x<list.get(j).x && list.get(i).y==list.get(j).y) rank++;
+				
 			}
 			
-			String temp = rank+"";
-			bw.write(temp+" ");
+			String temp = rank+" ";
+			bw.write(temp);
+			
 		}
+		
 		
 		bw.flush();
 		bw.close();
 		br.close();
+		
+	}
+	
+	
+	static class Node {
+		int x;
+		int y;
+		
+		Node(StringTokenizer st){
+			this.x = Integer.parseInt(st.nextToken());
+			this.y = Integer.parseInt(st.nextToken());
+		}
 	}
 	
 	
