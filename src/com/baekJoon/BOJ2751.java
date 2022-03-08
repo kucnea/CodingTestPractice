@@ -40,13 +40,12 @@ public class BOJ2751 {
 	
 	
 	private static void sort(int pivot, int start, int end) {
+		int right = end;
+		int left = start;
+		int temp = 0;
 		
-		
-		while(start<end) {
+		while(true) {
 			
-			int temp = 0;
-			int right = end;
-			int left = start;
 			boolean flag1 = false;
 			boolean flag2 = false;
 			
@@ -60,6 +59,7 @@ public class BOJ2751 {
 			}
 			
 			if(flag1 && flag2) return;
+			if(left>right) break;
 			
 			temp = list[left];
 			list[left] = list[right];
@@ -67,6 +67,16 @@ public class BOJ2751 {
 			
 		}
 		
+		temp = list[left];
+		list[left] = list[pivot];
+		list[pivot] = list[left];
+		
+		temp = left;
+		left = pivot;
+		pivot = left;
+		
+		sort(start,start+1,pivot-1);
+		sort(pivot,pivot+1,end);
 	}
 	
 	
