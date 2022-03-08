@@ -16,32 +16,23 @@ public class BOJ2751version2 {
 		
 		String s = br.readLine();
 		int n = Integer.parseInt(s);
-		list = new int[n];
-		
+		list = new int[2000002];
+		//1000000 = 0
 		for(int i = 0 ; i < n ; i++) {
-			
 			s = br.readLine();
-			list[i] = Integer.parseInt(s);
-			
+			list[Integer.parseInt(s)+1000000]++;
 		}
 		
-		
-		sort(0,list.length-1,1);
-		
-		for(int i = 0 ; i < n ; i++) {
-			String temp = list[i]+"\n";
-			bw.write(temp);
+		String temp = "";
+		for(int i = 0 ; i < list.length ; i++) {
+			if(list[i]!=0) temp+=(i-1000000)+"\n";
 		}
+		bw.write(temp);
 		bw.flush();
 		bw.close();
 		br.close();
 		
 	}
 
-	private static void sort(int start, int end, int pivot){
-		
-		
-		
-	}
 	
 }
