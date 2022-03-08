@@ -155,7 +155,35 @@ public class QuickSort {
 		
 	}
 	
-	
+	private static void sortVersion2(int start, int end) {
+		
+		if(start>=end) return;
+		int pivot = start;
+		int left = start+1;
+		int right = end;
+		
+		while(left<=right) {
+			
+			while(left < end && list[left]<=list[pivot]) left++;
+			while(right > start && list[right]>=list[pivot]) right--;
+			
+			int temp = 0;
+			if(left<right) {
+				temp = list[left];
+				list[left] = list[right];
+				list[right] = temp;
+			}else {
+				temp = list[left];
+				list[left] = list[pivot];
+				list[pivot] = temp;
+			}
+			
+		}
+		
+		sort(start,pivot-1);
+		sort(pivot+1,end);
+		
+	}
 	
 	
 	
