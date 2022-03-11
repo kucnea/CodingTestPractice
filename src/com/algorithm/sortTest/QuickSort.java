@@ -180,8 +180,8 @@ public class QuickSort {
 			
 		}
 		
-		sort(start,pivot-1);
-		sort(pivot+1,end);
+		sortVersion2(start,pivot-1);
+		sortVersion2(pivot+1,end);
 		
 	}
 	

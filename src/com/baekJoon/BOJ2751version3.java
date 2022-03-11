@@ -26,10 +26,10 @@ public class BOJ2751version3 {
 		}
 		
 		sort(0,list.length-1);
-		
+		StringBuffer temp = new StringBuffer();
 		for(int i = 0 ; i < n ; i++) {
-			String temp = list[i]+"\n";
-			bw.write(temp);
+			temp.append(list[i]+"\n");
+			bw.write(temp+"");
 		}
 		bw.flush();
 		bw.close();
