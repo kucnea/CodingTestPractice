@@ -23,6 +23,7 @@ public class IntTest {
 		
 		System.out.println((6/3)+1);
 		
+		System.out.println(99/2);
 		
 	}
 
