@@ -2,7 +2,7 @@ package com.baekJoon;
 
 import java.io.*;
 
-public class BOJ10989 {
+public class BOJ10989Version3 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,15 +17,16 @@ public class BOJ10989 {
 			int temp = Integer.parseInt(s);
 			list[temp]++;
 		}
-		StringBuffer sb = new StringBuffer();
+		String s2 = "";
 		for(int i =1 ; i < list.length ; i++) {
 			if(list[i]!=0) {
 				for(int j = 0 ; j < list[i] ; j++) {
-					sb.append(i+"\n");
+					s2 = i+"\n";
+					bw.write(s2);
+					s2 = null;
 				}
 			}
 		}
-		bw.write(sb.toString());
 		bw.flush();
 		bw.close();
 		br.close();
