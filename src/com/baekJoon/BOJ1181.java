@@ -1,3 +1,4 @@
+
 package com.baekJoon;
 
 import java.io.*;
@@ -11,22 +12,20 @@ public class BOJ1181 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int n = Integer.parseInt(br.readLine());
+		HashMap<String,Integer> list = new HashMap<>();
 		
 		for(int i = 0 ; i < n ; i++) {
+			String s = br.readLine();
+			list.put(s, s.length());
+		}
+		
+		while(list.keySet().iterator().hasNext()) {
+			int count = 0;
+			System.out.println((count++)+" : "+list.keySet().iterator().next());
 			
 		}
 		
-		
-	}
+	} 
 	
-	private static class Node{
-		String s;
-		int len;
-		
-		Node(String s){
-			this.s = s;
-			this.len = s.length();
-		}
-		
-	}
 }
+
