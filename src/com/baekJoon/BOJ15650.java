@@ -6,26 +6,52 @@ import java.util.*;
 public class BOJ15650 {
 	
 	static boolean[] check;
+	static BufferedWriter bw;
+	static int n,m;
+	static int[] list;
 	
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
-		int count = 1;
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
+		check = new boolean[n+1];
+		list = new int[m];
 		
-		for(int i = n ; i > n-m ; i++) {
-			count *= i;
+		dfs(1,0);
+		bw.close();
+		br.close();
+	}
+	
+	static private void dfs(int at, int depth) throws Exception {
+	
+		if(depth == m) {
+			for(int i : list) {
+				bw.write(i+" ");
+			}
+			bw.write("\n");
+			bw.flush();
+			return; 
 		}
 		
-		int[] list = new int[count];
-		
+		for(int i = at ; i <= n ; i++) {
+
+			if(!check[i]) {
+				check[i] = true;
+				list[depth] = i;
+				dfs(at+1,depth+1);
+				check[i] = false;
+			}
+			
+		}
 		
 		
 		
 	}
+	
+	
 	
 }
