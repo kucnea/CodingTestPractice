@@ -80,17 +80,17 @@ public class BOJ1780 {
 
 			else {
 
-				check(0, 0, n / 3);
-				check(0, n / 3, n / 3);
-				check(0, (2 * n) / 3, n / 3);
+				check(i+0, j+0, n / 3);
+				check(i+0, j+(n / 3), n / 3);
+				check(i+0, j+((2 * n) / 3), n / 3);
 
-				check(n / 3, 0, n / 3);
-				check(n / 3, n / 3, n / 3);
-				check(n / 3, (2 * n) / 3, n / 3);
+				check(i+(n / 3), j+0, n / 3);
+				check(i+(n / 3), j+(n / 3), n / 3);
+				check(i+(n / 3), j+((2 * n) / 3), n / 3);
 
-				check((2 * n) / 3, 0, n / 3);
-				check((2 * n) / 3, n / 3, n / 3);
-				check((2 * n) / 3, (2 * n) / 3, n / 3);
+				check(i+((2 * n) / 3), j+0, n / 3);
+				check(i+((2 * n) / 3), j+(n / 3), n / 3);
+				check(i+((2 * n) / 3), j+((2 * n) / 3), n / 3);
 
 			}
 
